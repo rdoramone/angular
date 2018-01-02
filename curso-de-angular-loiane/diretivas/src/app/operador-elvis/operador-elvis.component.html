@@ -1,0 +1,4 @@
+<p>Descrição: {{ tarefa.desc }}</p>
+<p>Responsável: {{ tarefa.responsavel != null ? tarefa.responsavel.nome : '' }}</p>
+<!-- Operador elvis "?" simplifica a forma de entender se u objeto é null, fazendo praticamente a mesma verificação que o ternário acima -->
+<p>Responsável: {{ tarefa.responsavel?.usuario?.nome }}</p>

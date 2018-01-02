@@ -1,0 +1,80 @@
+<!-- <section class="property-binding">
+  <article>
+    <h3>Interpolation / Interpolação</h3>
+    <p>String renderizada com interpolação: {{ url }}</p>
+    <p>Resultado de 1 + 1 é: {{ 1 + 1 }}</p>
+    <p>Resultado de 1 + 1 não é: {{ 1 + 1 + getValor() }}</p>
+    <p>Curso de Angular e gosto do curso: {{ cursoAngular && getCurtirCurso() }}</p>
+  </article>
+  <article>
+    <h3>Property Binding</h3> -->
+    <!-- Property Binding com interpolação -->
+    <!-- <img src="{{ urlImagem }}"> -->
+
+    <!-- Usando Property Binding -->
+    <!-- <img [src]="urlImagem"> -->
+    <!-- O Angular por tras dos panos, trata a propriedade 'src' da seguinte forma "bind-src='variável'", que é a mesma coisa de usar o "src" dentro dos colchetes, a propriedade usada dentro dos colchetes, o uso do property binding dessa forma é conhecida também como 'syntax sugar' sendo uma forma mais amigável para nós programarmos. -->
+  <!-- </article>
+  <article>
+    <h3>Class e Style Binding</h3> -->
+    <!-- Para usar a Class como property bindig tempos que passar da seguinte forma [propriedade.valorDaClass]="condição" -->
+    <!-- Para usar a Style bindig tempos que passar da seguinte forma [atributo.propriedade]="condição" -->
+    <!-- <div>
+      Selecione uma classe: -->
+      <!-- Para criar uma variável local ou variável de template, basta usar uma hash(#) em qualquer elemento do hatml e dar um nome a ela. -->
+       <!-- <select #classe (change)="0">
+        <option value="alert-success">Sucesso</option>
+        <option value="alert-info">Info</option>
+        <option value="alert-warning">Alerta</option>
+        <option value="alert-danger">Erro</option>
+      </select>
+      <br>
+      <br> -->
+      <!-- Property Binding com interpolação -->
+      <!-- <div class="alert {{ classe.value }}" role="alert">Texto colorido conforme valor do combobox.</div> -->
+
+      <!-- Property Binding de classe -->
+      <!-- <div class="alert" role="alert" [class.alert-success]="classe.value == 'alert-success'">Sucesso</div>
+      <div class="alert" role="alert" [class.alert-info]="classe.value == 'alert-info'">Info</div>
+      <div class="alert" role="alert" [class.alert-warning]="classe.value == 'alert-warning'">Alerta</div>
+      <div class="alert" role="alert" [class.alert-danger]="classe.value == 'alert-danger'">Erro</div> -->
+
+      <!-- Property Binding com estilo de classe -->
+      <!-- <div class="alert alert-danger" role="alert" [style.display]="classe.value == 'alert-danger' ? 'block' : 'none'">Esse texto só aparece em caso de erro.</div>
+    </div>
+  </article> -->
+<!-- </section>
+<section class="event-binding">
+  <article>
+    <h3>Event binding</h3>
+    <div>
+      <button class="btn btn-primary" (click)="botaoClicado()">me clique!</button> -->
+      <!-- Por trás dos panos o Angular chama o evento de click da seguinte forma "on-click='metodo()'" -->
+      <!-- <br>
+      <br> -->
+      <!-- No angular quando queremos pegar o valor do campo em relação ao evento nós usamos "event", mas no angular temos que usar o "$" na frente do "event", que ficaria da seguinte forma "$event" -->
+      <!-- Aqui nós conseguimos usar uma variável local para referenciar o "$event.target" que é passando como parâmentro do método e usamos a variável #campoInput, sendo assim fazemos apenas um replace do "$event.target" para "campoInput" -->
+      <!-- <input type="text" (keyup)="onKeyUp($event)" (keyup.enter)="salvarValor(campoInput.value)" (blur)="salvarValor(campoInput.value)" #campoInput>
+      <p>Valor atual: {{ valorAtual }}</p>
+      <p>Valor salvo: {{ valorSalvo }}</p>
+
+      <br>
+      <span (mouseover)="onMouseOverOut()" (mouseout)="onMouseOverOut()" [class.highlight]="isMouseOver">Passe o mouse sobre mim</span>
+    </div>
+  </article>
+</section> -->
+
+<!-- <app-meu-form></app-meu-form> -->
+
+<section class="input-output-properties">
+  <article>
+    <h3>Input/Output Properties</h3>
+    <!-- Input property -->
+    <app-curso [nomeCurso]="nomeDoCurso"></app-curso>
+
+    <!-- Output property -->
+    <!-- Lembrando que ao passar um valor hardcoded não é necessário usar Input property exemplo: <app-output-property valor="10"></app-output-property> -->
+    <!-- Aqui estamos usando um event binding chamado "(mudouValor)='onMudouValor($event)'"" -->
+    <app-output-property [valor]="valorInicial" (mudouValor)="onMudouValor($event)"></app-output-property>
+  </article>
+</section>

@@ -1,0 +1,30 @@
+<section class="two-way-data-binding">
+  <article>
+    <h3>Two-way data binding</h3>
+    <div>
+      <!-- Primeira forma de como fazer um Two-way data binding -->
+      <input type="text"
+      [value]="nome"
+      (input)="nome = $event.target.value"
+      />
+      
+      <!-- Lembrando que para o uso do "ngModel" seja possível devemos importar o "FormsModule" no app.module.ts -->
+      <!-- Segunda forma de como fazer um Two-way data binding -->
+      <input type="text"
+        [ngModel]="nome"
+        (ngModelChange)="nome = $event"
+      />
+
+      <!-- Terceira forma e a mais simplificada de como fazer um Two-way data binding -->
+      <!-- Aqui usamos a sintaxe "banana na caixa" [()] -->
+      <input type="text" [(ngModel)]="nome">
+      <!-- Por tras dos panos o angular faz o two-way data binding da seguinte forma "bindon-ngModel='variavel'" -->
+      <p>Você digitou o nome: {{ nome }}</p>
+
+      <p>Meu nome é {{ pessoa.nome }} e tenho {{pessoa.idade }} anos de idade.</p>
+      <input type="text" [(ngModel)]="pessoa.nome">
+      <input type="text" [(ngModel)]="pessoa.idade">
+
+    </div>
+  </article>
+</section>

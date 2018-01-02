@@ -1,0 +1,39 @@
+<!-- <h5>*ngIf</h5> -->
+<!-- Adiretiva *ngIf é recomendada para usar em árvore de elementos grandes -->
+<!-- <div *ngIf="cursos.length > 0">
+  Lista de cursos aqui
+</div>
+<div *ngIf="mostrarCursos">
+  Lista de cursos aqui
+</div>
+<div *ngIf="!mostrarCursos">
+  Não existem cursos para serem listados.
+</div>
+<br>
+<button type="button" (click)="onMostrarCursos()">Mostrar ou esconder cursos</button>
+
+<h5>hidden como alteranativa ao *ngIf</h5> -->
+<!-- o property binding [hidden] é recomendado para usar em árvore de elementos pequenas -->
+<!-- Lembrando que o o uso do property binding [hidden] é menos custoso, caso o custo de criar a árvore de elementos seja grande, mas também temos que levar em consideração a segurança da aplicação e não usar esse property binding, quando só pudermos apresentar determinados elementos quando o usuário esteja logado ou coisa do tipo. -->
+<!-- <div [hidden]="!mostrarCursos">
+  Lista de cursos aqui
+</div>
+<div [hidden]="mostrarCursos">
+  Não existem cursos para serem listados.
+</div> -->
+<h5>Removendo o * e usando template</h5>
+<div *ngIf="!mostrarCursos">
+  Lista de cursos aqui.
+</div>
+
+<!-- O uso da tag <template> não é mais utilizada na versão 4 do Angular, agora usamos a tag <ng-template> -->
+<ng-template [ngIf]="mostrarCursos">
+  <div>
+      Lista de cursos aqui.
+  </div>
+</ng-template>
+
+<!-- Por tras dos panos o Angular está usando uma diretiva template para poder renderizar a diretiva *ngIf -->
+<div template="ngIf mostrarCursos">
+  Lista de cursos aqui.
+</div>

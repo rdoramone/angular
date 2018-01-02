@@ -1,0 +1,31 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li class="nav-item" [class.active]="aba == 'home'"><a href="#" (click)="aba = 'home'">Home</a></li>
+        <li class="nav-item" [class.active]="aba == 'mapa'"><a href="#" (click)="aba = 'mapa'">Mapa</a></li>
+        <li class="nav-item" [class.active]="aba == 'lista'"><a href="#" (click)="aba = 'lista'">Lista</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<div class="container" [ngSwitch]="aba">
+  <p *ngSwitchCase="'mapa'">Modo Mapa ativado</p>
+  <p *ngSwitchCase="'lista'">Modo Lista ativado</p>
+  <p *ngSwitchDefault>Home</p>
+</div>
+
+<h5>Removendo o * e usando template</h5>
+<div class="container" [ngSwitch]="aba">
+  <ng-template [ngSwitchCase]="'mapa'">
+    <p>Modo Mapa ativado</p>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'lista'">
+    <p>Modo Lista ativado</p>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'home'" ngSwitchDefault>
+    <p>Home</p>
+  </ng-template>
+</div>
