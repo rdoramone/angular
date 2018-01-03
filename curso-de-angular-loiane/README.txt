@@ -185,6 +185,7 @@ O Angular tem uma propriedade chamada ngModel que é uma representação de uma 
 
     Como o service foi criado de forma manual temos que falar para aplicação que ela está forncendo um serviço, ou seja, temos que passar ela no providers do app.module.ts.
 
+- Pipes: O pipe transforma um valor e podemos mostrar o valor transformado dentro de um template.
 
 *Boas prática
 - Lógica de negócios são usando em serviços.
