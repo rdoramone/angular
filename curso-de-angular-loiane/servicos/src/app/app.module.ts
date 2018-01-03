@@ -3,17 +3,24 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-import { CursosComponent } from './cursos/cursos.component';
 import { CursosService } from './cursos/cursos.service';
+import { CursosModule } from './cursos/cursos.module';
+import { CriarCursoModule } from './criar-curso/criar-curso.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CursosComponent
+    AppComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    CriarCursoModule,
+    CursosModule
   ],
+  /*
+    Aqui nós estamos fornecendo o serviço CursosService de forma que ele possa ser usado
+    em toda a aplicação, sem a necessidade de ser declarado novamente em outros módulos.
+    Lembrando que não é necessário fazer o import do service declarado no metadado "providers".
+  */
   providers: [CursosService],
   bootstrap: [AppComponent]
 })

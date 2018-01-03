@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CursosService } from './cursos.service';
+import { CursosService } from './../cursos/cursos.service';
 
 @Component({
-  selector: 'app-cursos',
-  templateUrl: './cursos.component.html',
-  styleUrls: ['./cursos.component.css']//,
-   /*
+  selector: 'app-criar-curso',
+  templateUrl: './criar-curso.component.html',
+  styleUrls: ['./criar-curso.component.css']
+  /*
     Caso queira utilizar um Service em um componente específico. nós podemos declarar o "providers"
     dentro do Decorator "@Component". Mas utilizando dessa forma, nós teremos o número de instâncias
     de acordo com o número de declarações do metadado nos componentes. Por exemplo, se utilizar a
@@ -15,18 +15,18 @@ import { CursosService } from './cursos.service';
   */
   // providers: [CursosService]
 })
-export class CursosComponent implements OnInit {
+export class CriarCursoComponent implements OnInit {
 
   cursos: string[] = [];
 
-  /*
-    Lembrando que ao utilizar o "private" para a declaração do parâmetro "cursosService", "cursosService"
-    passa a ser um atributo da classe "CursosComponent"
-  */
-  constructor(private cursosService: CursosService) { }
+  constructor(private cursoService: CursosService) { }
 
   ngOnInit() {
-    this.cursos = this.cursosService.getCursos();
+    this.cursos = this.cursoService.getCursos();
+  }
+
+  onAddCurso(curso: string) {
+    this.cursoService.addCurso(curso);
   }
 
 }
