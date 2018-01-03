@@ -10,12 +10,12 @@ import { CursosService } from './cursos.service';
 export class CursosComponent implements OnInit {
 
   cursos: string[] = [];
-  // cursosService: CursosService;
 
-  constructor(private cursosService: CursosService) {
-    // this.cursoService = new CursosService();
-    // this.cursosService = _cursosService;
-  }
+  /*
+    Lembrando que ao utilizar o "private" para a declaração do parâmetro "cursosService", "cursosService"
+    passa a ser um atributo da classe "CursosComponent"
+  */
+  constructor(private cursosService: CursosService) { }
 
   ngOnInit() {
     this.cursos = this.cursosService.getCursos();
