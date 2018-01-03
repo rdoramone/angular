@@ -169,5 +169,22 @@ O Angular tem uma propriedade chamada ngModel que é uma representação de uma 
     Os Componentes têm que ser responsáveis apenas por pegar os dados e mostrar o dados na tela, ou seja, interação com usuário.
     Podemos usar Classes de serviços como classes utilitárias.
 
+- Injeção de dependências: Classe 1 precisa da Classe 2 para funcionar.
+    Exemplo: No Componente CursosComponent, foi necessário criar uma instância, ou seja, injetar a dependência da Classe CursosService na classe CursosComponent. Mas podemos fazer isso de uma forma muito mais elegante e de forma automatica.
+
+    No conceito de injeção de dependências é possível fazer isso de 3 formas. Através dos construtores, utilizando os métodos setters ou de atributos.
+
+    Para que o Angular entenda que exite uma dependência a ser injetada, basta fazer o uso do Decorator "@Injectable" e fazer o import dele.
+
+    Depois no componente no qual se vai usar a dependência basta passar fazer a injeção de dependência através do construtor, passando como parâmetro. 
+    
+    Exemplo: 
+        constructor(_cursoService: CursosService) {
+            this.cursoService = _cursoService;
+        }
+
+    Como o service foi criado de forma manual temos que falar para aplicação que ela está forncendo um serviço, ou seja, temos que passar ela no providers do app.module.ts.
+
+
 *Boas prática
 - Lógica de negócios são usando em serviços.
