@@ -5,7 +5,7 @@ import { CursosService } from './../cursos/cursos.service';
 @Component({
   selector: 'app-criar-curso',
   templateUrl: './criar-curso.component.html',
-  styleUrls: ['./criar-curso.component.css']
+  styleUrls: ['./criar-curso.component.css'],
   /*
     Caso queira utilizar um Service em um componente específico. nós podemos declarar o "providers"
     dentro do Decorator "@Component". Mas utilizando dessa forma, nós teremos o número de instâncias
@@ -13,7 +13,7 @@ import { CursosService } from './../cursos/cursos.service';
     "CursosServices" declarado no metadado "providers" em 3 componentes diferentes, teremos 3 instâncias
     de "CursosService".
   */
-  // providers: [CursosService]
+  providers: [CursosService]
 })
 export class CriarCursoComponent implements OnInit {
 

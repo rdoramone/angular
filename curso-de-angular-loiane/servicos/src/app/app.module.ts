@@ -1,9 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-
 import { AppComponent } from './app.component';
-import { CursosService } from './cursos/cursos.service';
 import { CursosModule } from './cursos/cursos.module';
 import { CriarCursoModule } from './criar-curso/criar-curso.module';
 
@@ -21,7 +19,7 @@ import { CriarCursoModule } from './criar-curso/criar-curso.module';
     em toda a aplicação, sem a necessidade de ser declarado novamente em outros módulos.
     Lembrando que não é necessário fazer o import do service declarado no metadado "providers".
   */
-  providers: [CursosService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

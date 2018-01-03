@@ -2,10 +2,17 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
 import { CriarCursoComponent } from './criar-curso.component';
+import { ReceberCursoCriadoComponent } from '../receber-curso-criado/receber-curso-criado.component';
 
 @NgModule({
   declarations: [
-    CriarCursoComponent
+    CriarCursoComponent,
+    /*
+      Aqui como eu vou utilizar o componente "ReceberCursoCriadoComponent" apenas dentro do
+      "CriarCursoComponent", eu não preciso declarar "ReceberCursoCriadoComponent" no metadado
+      "exports".
+    */
+    ReceberCursoCriadoComponent
   ],
   imports: [
     CommonModule
