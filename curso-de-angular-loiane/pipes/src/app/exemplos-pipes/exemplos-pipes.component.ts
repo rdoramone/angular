@@ -16,9 +16,17 @@ export class ExemplosPipesComponent implements OnInit {
     url: 'http://a.co/glgjpRP'
   }
 
+  livros: string[] = ['Angular 2', 'Java'];
+
+  filtro: string;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  addCurso(valor) {
+    this.livros.push(valor);
+    console.log(this.livros);
+  }
 }
