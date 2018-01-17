@@ -187,5 +187,7 @@ O Angular tem uma propriedade chamada ngModel que é uma representação de uma 
 
 - Pipes: O pipe transforma um valor e podemos mostrar o valor transformado dentro de um template.
 
+- O Pipe Assíncrono serve para conseguir fazer a saída de um valor no template, mesmo que o valor a ser atribuido para esse atributo demore um pouco. lembrando que esse Pipe é muito útil ao fazer uma requisição para um servidor.
+
 *Boas prática
 - Lógica de negócios são usando em serviços.
