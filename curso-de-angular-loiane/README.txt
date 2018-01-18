@@ -189,5 +189,9 @@ O Angular tem uma propriedade chamada ngModel que é uma representação de uma 
 
 - O Pipe Assíncrono serve para conseguir fazer a saída de um valor no template, mesmo que o valor a ser atribuido para esse atributo demore um pouco. lembrando que esse Pipe é muito útil ao fazer uma requisição para um servidor.
 
+- Rotas: São compostas de um objeto e esses objetos possuem alguns atributos.
+    path: é o caminho.
+    component: é o componente que gostariamos de usar.
+
 *Boas prática
 - Lógica de negócios são usando em serviços.
