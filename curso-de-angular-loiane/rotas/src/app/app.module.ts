@@ -12,6 +12,9 @@ import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 
 import { routing } from './app.routing';
 
+import { CursosService } from './cursos/cursos.service';
+import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
+
 
 @NgModule({
   declarations: [
@@ -19,14 +22,15 @@ import { routing } from './app.routing';
     HomeComponent,
     LoginComponent,
     CursosComponent,
-    CursoDetalheComponent
+    CursoDetalheComponent,
+    CursoNaoEncontradoComponent
   ],
   imports: [
     BrowserModule,
     MaterializeModule,
     routing
   ],
-  providers: [],
+  providers: [CursosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

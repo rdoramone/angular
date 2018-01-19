@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
+import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
 
 const APP_ROUTES: Routes = [
     { path: 'cursos', component: CursosComponent },
@@ -17,6 +18,7 @@ const APP_ROUTES: Routes = [
     */
     { path: 'curso/:id', component: CursoDetalheComponent },
     { path: 'login', component: LoginComponent },
+    { path: 'nao-encontrado', component: CursoNaoEncontradoComponent },
     { path: '', component: HomeComponent }
 ];
 // a propriedade 'forRoot' me mostra todas as rotas do projeto.
