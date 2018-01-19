@@ -4,10 +4,22 @@
         <ul id="nav-mobile" class="left hide-on-med-and-down">
             <li routerLinkActive="active"><a routerLink="/login">Login</a></li>
             <li routerLinkActive="active"><a routerLink="/cursos">Cursos</a></li>
+            <!-- 
+                O routerLink também pode ser usado como property binding, para poder passar informações dinâmicas.
+
+                Nesse caso o routerLink como property binding receberá um array de parâmetros, sendo que o primeiro
+                valor nós passamos o valor da rota e o segundo serão os parâmetros. no exemplo abaixo nós passamos
+                o valor da variável do campo 'input'.
+
+                OBS: Lembrando que o uso da barra para a rota é opcional ao usar o caminho no array de parâmetros.
+            -->
+            <li routerLinkActive="active"><a [routerLink]="['curso', idCurso.value]">Curso com ID</a></li>
         </ul>
     </div>
 </nav>
 <div class="container">
+    <p>Entre com o id do curso</p>
+    <input type="text" #idCurso>
     <!-- Essa tag permite que se tenha suporte as rotas -->
     <!-- Lembrando que os componentes que passamos nas rotas são renderizados dentro dessa tag -->
     <router-outlet></router-outlet>
