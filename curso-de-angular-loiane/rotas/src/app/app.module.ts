@@ -10,10 +10,12 @@ import { LoginComponent } from './login/login.component';
 import { CursosComponent } from './cursos/cursos.component';
 import { CursoDetalheComponent } from './curso-detalhe/curso-detalhe.component';
 
-import { routing } from './app.routing';
+// import { routing } from './app.routing';
 
 import { CursosService } from './cursos/cursos.service';
 import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-encontrado.component';
+
+import { AppRoutingModule } from './app.routing.model';
 
 
 @NgModule({
@@ -28,7 +30,8 @@ import { CursoNaoEncontradoComponent } from './curso-nao-encontrado/curso-nao-en
   imports: [
     BrowserModule,
     MaterializeModule,
-    routing
+    AppRoutingModule
+    // routing
   ],
   providers: [CursosService],
   bootstrap: [AppComponent]
