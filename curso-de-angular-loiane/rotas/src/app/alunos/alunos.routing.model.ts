@@ -10,7 +10,7 @@ const alunosRoutes: Routes = [
         Mas ao fazer isso devemos passar a tag 'router-outlet' dentro do 'alunos.component.html', com
         isso iremos renderizar sempre 2 componentes, alunos.component e um dos filhos que serão selecionados.
     */
-    { path: 'alunos', component: AlunosComponent,
+    { path: '', component: AlunosComponent,
         children: [
             { path: 'novo', component: AlunoFormComponent },
             { path: ':id', component: AlunoDetalheComponent },

@@ -39,7 +39,7 @@ export class CursoDetalheComponent implements OnInit {
             Exemplo:
               this.router.navigate(['/curso', this.id]);
           */
-          this.router.navigate(['/nao-encontrado']);
+          this.router.navigate(['/cursos/nao-encontrado']);
         }
       }
     );
