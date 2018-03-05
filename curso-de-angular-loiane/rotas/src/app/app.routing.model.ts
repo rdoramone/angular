@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const appRoutes: Routes = [
     /*
@@ -19,10 +20,19 @@ const appRoutes: Routes = [
 
         3º No arquivo de roteamento do meu módulo, no caso 'cursos.routing.module', o caminho principal deverá vir vazio.
     */
-    { path: 'cursos', loadChildren: 'app/cursos/cursos.module#CursosModule' },
-    { path: 'alunos', loadChildren: 'app/alunos/alunos.module#AlunosModule' },
+    { path: 'cursos',
+        loadChildren: 'app/cursos/cursos.module#CursosModule',
+        canActivate: [AuthGuard]
+    },
+    { path: 'alunos',
+        loadChildren: 'app/alunos/alunos.module#AlunosModule',
+        canActivate: [AuthGuard]
+    },
     { path: 'login', component: LoginComponent },
-    { path: '', component: HomeComponent }
+    { path: '',
+        component: HomeComponent,
+        canActivate: [AuthGuard]
+    }
 ];
 
 @NgModule({
