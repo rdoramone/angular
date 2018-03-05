@@ -4,6 +4,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { AuthGuard } from './guards/auth.guard';
+import { CursosGuard } from './guards/cursos.guard';
+import { AlunosGuard } from './guards/alunos.guard';
 
 const appRoutes: Routes = [
     /*
@@ -22,7 +24,8 @@ const appRoutes: Routes = [
     */
     { path: 'cursos',
         loadChildren: 'app/cursos/cursos.module#CursosModule',
-        canActivate: [AuthGuard]
+        canActivate: [AuthGuard],
+        canActivateChild: [CursosGuard]
     },
     { path: 'alunos',
         loadChildren: 'app/alunos/alunos.module#AlunosModule',

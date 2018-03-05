@@ -1,3 +1,4 @@
+import { AlunosGuard } from './../guards/alunos.guard';
 import { NgModule, ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AlunosComponent } from './alunos.component';
@@ -11,6 +12,7 @@ const alunosRoutes: Routes = [
         isso iremos renderizar sempre 2 componentes, alunos.component e um dos filhos que serão selecionados.
     */
     { path: '', component: AlunosComponent,
+        canActivateChild: [AlunosGuard],
         children: [
             { path: 'novo', component: AlunoFormComponent },
             { path: ':id', component: AlunoDetalheComponent },
