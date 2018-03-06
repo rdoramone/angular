@@ -45,7 +45,7 @@ const appRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forRoot(appRoutes)
+        RouterModule.forRoot(appRoutes, { useHash: true })
     ],
     /*
         Aqui nós precisamos exportar o RouterModule, pois nós usamos as diretivas que pertecem
