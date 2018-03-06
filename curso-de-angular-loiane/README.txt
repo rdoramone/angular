@@ -195,5 +195,9 @@ O Angular tem uma propriedade chamada ngModel que é uma representação de uma 
     
 - Guarda de Rota: é usado para definir se o usuário pode ou não acessar determinadas rotas, para isso usamos a implementação CanActivate e temos também canActivateChild e canDeactivate, que usamos para desativar uma rota.
 
+- Formulários
+    - Template Driven: É um formulário que é criado e configurado no HTML, validações, tamanhos de campo e etc, mas para o seu envio é necessário de um ngSubmit.
+    - Data Driven (Reativo): O Formulário é criado e configurado no componente do Angular, validações são feitas no componente. Essa forma é chamada de reativa, pois utiliza controles da própria API. Para o seu envio não é necessário o uso do ngSubmit, pois o form já está dentro do componente.
+
 *Boas prática
 - Lógica de negócios são usando em serviços.
