@@ -192,6 +192,8 @@ O Angular tem uma propriedade chamada ngModel que é uma representação de uma 
 - Rotas: São compostas de um objeto e esses objetos possuem alguns atributos.
     path: é o caminho.
     component: é o componente que gostariamos de usar.
+    
+- Guarda de Rota: é usado para definir se o usuário pode ou não acessar determinadas rotas, para isso usamos a implementação CanActivate e temos também canActivateChild e canDeactivate, que usamos para desativar uma rota.
 
 *Boas prática
 - Lógica de negócios são usando em serviços.
