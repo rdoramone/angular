@@ -10,6 +10,7 @@ import { AlunosRoutingModule } from './alunos.routing.model';
 
 import { AlunosService } from './alunos.service';
 import { AlunosDeactivateGuard } from '../guards/alunos-deactivete.guard';
+import { AlunoDetalheResolver } from './guards/aluno-detalhe.resolver';
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import { AlunosDeactivateGuard } from '../guards/alunos-deactivete.guard';
     ],
     providers: [
         AlunosService,
-        AlunosDeactivateGuard
+        AlunosDeactivateGuard,
+        AlunoDetalheResolver
     ]
 })
 export class AlunosModule { }
