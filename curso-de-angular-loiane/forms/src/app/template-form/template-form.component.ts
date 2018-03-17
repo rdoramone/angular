@@ -11,7 +11,7 @@ export class TemplateFormComponent implements OnInit {
     nome: 'Ricardo',
     email: 'rdo_ramone@hotmail.com'
   }
-  
+
   constructor() { }
 
   ngOnInit() {
