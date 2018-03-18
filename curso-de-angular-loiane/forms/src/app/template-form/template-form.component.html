@@ -2,9 +2,12 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <div class="form-group">
         <label for="nome">Nome</label>
-        <input type="nome" class="form-control" id="nome" placeholder="Nome" name="nome" [(ngModel)]="usuario.nome" required>
+        <input type="nome" class="form-control" id="nome" placeholder="Nome" name="nome" [(ngModel)]="usuario.nome" required #nome>
+        <div>
+            {{ nome.className }}
+        </div>
     </div>
-
+    <!-- Os campos de input recebem algumas classes como controle do campo, caso o campo tenha sido visitado, ou seja, atribuido foco no campo ele recebe a classe ng-touched caso contrário ele mantḿe a classe ng-untouched, se houver alguma mudança de valor no campo, teremos a classe ng-dirty caso contrário teremos a classe ng-pristine. Caso o campo seja válido teremos a classe ng-valid, caso contrário teremos a classe ng-invalid. -->
     <div class="form-group">
         <label for="email">Email</label>
         <input type="email" class="form-control" id="email" placeholder="nome@email.com" name="email" [(ngModel)]="usuario.email" required email>
