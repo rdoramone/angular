@@ -1,0 +1,7 @@
+<div style="margin-top:20px" *ngIf="form">
+    <div>Detalhes do from</div>
+    <pre>Form válido: {{ form.valid }}</pre>
+    <pre>Form submetido: {{ form.submitted }}</pre>
+    <pre>Valores: {{ form.value | json }}</pre>
+    <!-- Aqui estou usando o pipe de json pois, form.value retorna um objeto -->
+</div>
