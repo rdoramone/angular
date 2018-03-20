@@ -21,7 +21,7 @@
         <div class="form-row">
             <div class="form-group col-md-3">
                 <label for="cep">CEP</label>
-                <input type="text" class="form-control is-invalid" id="cep" name="cep" [(ngModel)]="usuario.cep" required #cep="ngModel" [ngClass]="aplicaCssErro(cep)" (blur)="consultaCEP($event.target.value)">
+                <input type="text" class="form-control is-invalid" id="cep" name="cep" [(ngModel)]="usuario.cep" required #cep="ngModel" [ngClass]="aplicaCssErro(cep)" (blur)="consultaCEP($event.target.value, f)">
                 <app-campo-control-erro [mostrarErro]="verificaValidTouched(cep)" msgErro="CEP é obrigatório"></app-campo-control-erro>
             </div>
             <div class="form-group col-md-3">
@@ -38,7 +38,7 @@
         <div class="form-row">
             <div class="form-group col-md-12">
                 <label for="rua">Rua</label>
-                <input type="text" class="form-control" id="rua" name="rua" [(ngModel)]="usuario.rua" required #rua="ngModel" readonly>
+                <input type="text" class="form-control" id="rua" name="rua" ngModel required #rua="ngModel" readonly>
             </div>
         </div>
 
