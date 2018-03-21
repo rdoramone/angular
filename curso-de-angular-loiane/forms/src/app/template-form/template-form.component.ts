@@ -92,7 +92,7 @@ export class TemplateFormComponent implements OnInit {
   }
 
   onSubmit(form) {
-    this.http.post('enderecoServer/formUsuario', JSON.stringify(form.value))
+    this.http.post('https://httpbin.org/post', JSON.stringify(form.value))
     .map(res => res)
     .subscribe(dados => console.log(dados));
   }
