@@ -1,3 +1,22 @@
-<p>
-  data-form works!
-</p>
+<!-- Aqui a diretiva 'formGroup' será um property binding, pois quando o formulário sofrer alteração, as informações devem ser atualizadas no template também. -->
+
+<!-- Para associar o formulário ao formulário do Angular, passamos a variável usada para definir o formBuilder -->
+<form [formGroup]="formulario">
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="nome">Nome</label>
+            <input type="nome" formControlName="nome" class="form-control" id="nome" placeholder="Nome">
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <label for="email">Email</label>
+            <!-- Para os campos nós passamos o atributo 'formControlName' e como valor o nome do campo passado no Angular, para que o mesmo receba os valores corretamente -->
+            <input type="email" formControlName="email" class="form-control" id="email" placeholder="nome@email.com">
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Enviar</button>
+
+    <app-form-debug [form]="formulario"></app-form-debug>
+</form>
