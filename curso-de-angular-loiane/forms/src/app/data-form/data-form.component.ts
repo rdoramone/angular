@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { Http, HttpModule } from '@angular/http';
+import 'rxjs/add/operator/map';
 
 @Component({
   selector: 'app-data-form',
@@ -10,7 +12,10 @@ export class DataFormComponent implements OnInit {
 
   formulario: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private http: Http
+  ) { }
 
   ngOnInit() {
     // cada campo passa a ser um controle
@@ -26,6 +31,12 @@ export class DataFormComponent implements OnInit {
       nome: [null],
       email: [null]
     });
+  }
+
+  onSubmit() {
+    this.http.post('https://httpbin.org/post', JSON.stringify(this.formulario.value))
+      .map(res => res)
+      .subscribe(dados => console.log(dados));
   }
 
 }

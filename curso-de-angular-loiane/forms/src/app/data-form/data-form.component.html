@@ -1,7 +1,7 @@
 <!-- Aqui a diretiva 'formGroup' será um property binding, pois quando o formulário sofrer alteração, as informações devem ser atualizadas no template também. -->
 
 <!-- Para associar o formulário ao formulário do Angular, passamos a variável usada para definir o formBuilder -->
-<form [formGroup]="formulario">
+<form [formGroup]="formulario" (ngSubmit)='onSubmit()'>
     <div class="form-row">
         <div class="form-group col-md-12">
             <label for="nome">Nome</label>
