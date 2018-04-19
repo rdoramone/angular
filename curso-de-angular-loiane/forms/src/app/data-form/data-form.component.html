@@ -5,14 +5,17 @@
     <div class="form-row">
         <div class="form-group col-md-12">
             <label for="nome">Nome</label>
-            <input type="nome" formControlName="nome" class="form-control" id="nome" placeholder="Nome">
+            <input type="nome" formControlName="nome" class="form-control" id="nome" placeholder="Nome" [ngClass]="aplicaCssErro('nome')">
+            <app-campo-control-erro [mostrarErro]="verificaValidTouched('nome')" msgErro="Nome é obrigatório"></app-campo-control-erro>
         </div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-12">
             <label for="email">Email</label>
             <!-- Para os campos nós passamos o atributo 'formControlName' e como valor o nome do campo passado no Angular, para que o mesmo receba os valores corretamente -->
-            <input type="email" formControlName="email" class="form-control" id="email" placeholder="nome@email.com">
+            <input type="email" formControlName="email" class="form-control" id="email" placeholder="nome@email.com" [ngClass]="aplicaCssErro('email')">
+            <app-campo-control-erro [mostrarErro]="verificaValidTouched('email')" msgErro="Email obrigatório"></app-campo-control-erro>
+            <app-campo-control-erro [mostrarErro]="verificaEmailInvalido()" msgErro="Email inválido"></app-campo-control-erro>
         </div>
     </div>
 
